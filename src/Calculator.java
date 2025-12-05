@@ -4,6 +4,9 @@ public class Calculator {
     public static int add(int a, int b) {
         return a + b;
     }
+    public static int sub(int x, int y ){
+        return x-y;
+    }
   
     public static void main(String[] args) {
         final int EXIT = 0;
@@ -14,6 +17,7 @@ public class Calculator {
         do {
             System.out.println("\n=== Calculator Menu ===");
             System.out.println(ADD + ". Add");
+            System.out.println(SUB + ". sub");
             System.out.println(EXIT + ". Exit");
             System.out.print("Choose an option: ");
 
@@ -25,6 +29,12 @@ public class Calculator {
                     int a = scanner.nextInt();
                     int b = scanner.nextInt();
                     System.out.println("Result = " + add(a, b));
+                    break;
+                case SUB:
+                    System.out.print("Enter two numbers: ");
+                    int a = scanner.nextInt();
+                    int b = scanner.nextInt();
+                    System.out.println("Result = " + sub(a, b));
                     break;
                 case EXIT:
                     System.out.println("Exiting calculator. Goodbye!");
