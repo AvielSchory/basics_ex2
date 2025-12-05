@@ -10,6 +10,12 @@ public class Calculator {
     public static int multiply(int a, int b){
         return a * b;
     }
+    public static int pow(int a, int b){
+        int res=a;
+        for(int i=0; i<b; i++){
+            multiply(res, a);
+        }
+        return res;
 
     public static int fact(int a, int b){
         return a ** b;
@@ -18,6 +24,8 @@ public class Calculator {
     public static void main(String[] args) {
         final int EXIT = 0;
         final int ADD = 1;
+        final int SUB =3; 
+        final int POW =5; 
         final int MUL = 2;
         final int FACT = 4;
         Scanner scanner = new Scanner(System.in);
@@ -25,9 +33,10 @@ public class Calculator {
 
         do {
             System.out.println("\n=== Calculator Menu ===");
+            System.out.println(EXIT + ". Exit");
             System.out.println(ADD + ". Add");
             System.out.println(SUB + ". sub");
-            System.out.println(EXIT + ". Exit");
+            System.out.println(POW + ".POW");
             System.out.println(MUL + ". Multiply");
             System.out.println(FACT + ". Factorial")
             System.out.print("Choose an option: ");
@@ -56,6 +65,11 @@ public class Calculator {
                     int b = scanner.nextInt();
                     System.out.println("Result = " + multiply(a, b));
                     break;
+                case POW:
+                    System.out.print("Enter two numbers: ");
+                    int a = scanner.nextInt();
+                    int b = scanner.nextInt();
+                    System.out.println("Result = " + pow(a, b));
                 case FACT:
                     System.out.print("Enter two numbers: ");
                     int a = scanner.nextInt();
